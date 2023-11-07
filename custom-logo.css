@@ -1,0 +1,35 @@
+:root {
+	/* color of bright text on colored buttons */
+	--text-1: hsl(220, 40%, 90%);
+	/* color of icon buttons and channels */
+	--text-4: hsl(220, 15%, 40%);
+
+	/* top left icon */
+	--icon: block; /* change to 'none' to hide icon */
+	--discord-icon: none; /* change to 'block' to show default discord icon */
+}
+
+.childWrapper__01b9c > svg {
+	display: var(--discord-icon);
+}
+.childWrapper__01b9c:has(> svg)::before {
+	content: '';
+	display: var(--icon);
+	position: absolute;
+	width: 80%;
+	height: 90%;
+	background: var(--text-4);
+	overflow: hidden;
+}
+.wrapper_d281dd:hover .childWrapper__01b9c::before {
+	transition: background-color 0.3s ease-out, transform 0.6s ease-out;
+	transform: rotate(0deg) scale(1);
+}
+.wrapper_d281dd:hover > .childWrapper__01b9c::before,
+.wrapper_d281dd.selected_f5ec8e > .childWrapper__01b9c::before {
+	background: var(--text-1);
+	transform: rotate(-360deg) scale(0.8);
+}
+.childWrapper__01b9c:has(> svg)::before {
+	-webkit-mask-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e7/Font_Awesome_5_brands_python.svg');
+} /* Chnage this Link to Change the Icon */
