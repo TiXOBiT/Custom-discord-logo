@@ -1,25 +1,28 @@
 :root {
-	/* color of bright text on colored buttons */
-	--text-1: hsl(220, 40%, 90%);
-	/* color of icon buttons and channels */
-	--text-4: hsl(220, 15%, 40%);
-
 	/* top left icon */
-	--icon: block; /* change to 'none' to hide icon */
+	--home-icon: block; /* change to 'none' to hide moon icon */
 	--discord-icon: none; /* change to 'block' to show default discord icon */
+	--home-icon-link: url('https://upload.wikimedia.org/wikipedia/commons/e/e7/Font_Awesome_5_brands_python.svg'); /* change this link to any .svg file to change the discord icon */
+	--icon: url('https://cdn.discordapp.com/attachments/946057463269060621/1121117624571535401/IMG_20230520_180326.jpg');/* this adds an image behind the icon ,if u want to have an image instead of the icon then leave the link above empty  */
+	--icon-2: url('https://cdn.discordapp.com/attachments/1117077288782147584/1148687238767583343/IMG_20230905_215959.jpg');/* this can replace the icon itself with an image if u dont want an icon also if u dont leave icon link empty this image will show up on the icon */
+	/* keep in mind u can chnage --icon and --icon-2 to .gif files as well */
 }
+
+.childWrapper__01b9c{background:var(--icon) center/cover no-repeat scroll;}
 
 .childWrapper__01b9c > svg {
 	display: var(--discord-icon);
 }
 .childWrapper__01b9c:has(> svg)::before {
 	content: '';
-	display: var(--icon);
+	display: var(--moon-icon);
 	position: absolute;
 	width: 80%;
 	height: 90%;
-	background: var(--text-4);
-	overflow: hidden;
+	background: var(--icon-2) center no-repeat;
+	border-radius: 2rem;
+	background-size: 100%;
+	background-color: transparent;
 }
 .wrapper_d281dd:hover .childWrapper__01b9c::before {
 	transition: background-color 0.3s ease-out, transform 0.6s ease-out;
@@ -27,9 +30,8 @@
 }
 .wrapper_d281dd:hover > .childWrapper__01b9c::before,
 .wrapper_d281dd.selected_f5ec8e > .childWrapper__01b9c::before {
-	background: var(--text-1);
-	transform: rotate(-360deg) scale(0.8);
+	transform: rotate(-360deg) scale(0.4);
 }
 .childWrapper__01b9c:has(> svg)::before {
-	-webkit-mask-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e7/Font_Awesome_5_brands_python.svg');
-} /* Chnage this Link to Change the Icon */
+	-webkit-mask-image: var(--home-icon-link);
+}
