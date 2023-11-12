@@ -35,3 +35,15 @@
 .childWrapper__01b9c:has(> svg)::before {
 	-webkit-mask-image: var(--home-icon-link);
 }
+
+/* Collapse Members list */
+@media (max-width: 1920px) {
+/* Members list*/
+  .container_b2ce9c {
+    width: 60px;
+    transition-duration: 0.25s;
+  }
+  .container_b2ce9c:hover {
+    width: 240px;
+  }
+}
